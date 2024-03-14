@@ -31,7 +31,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [os.getenv('ALLOWED_HOSTS')]
 
-CSRF_TRUSTED_ORIGINS = ['https://' + os.getenv('ALLOWED_HOSTS')]
+CSRF_TRUSTED_ORIGINS = [os.getenv('CSRF_TRUSTED_ORIGINS')]
 
 # Application definition
 
@@ -43,9 +43,20 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Tailwindcss
+    'tailwind',
+    'theme',
+    'django_browser_reload',
+
     # My apps
     'recipes',
-    
+
+]
+
+TAILWIND_APP_NAME = 'theme'
+
+INTERNAL_IPS = [
+    os.getenv('ALLOWED_HOSTS'),
 ]
 
 MIDDLEWARE = [
@@ -53,6 +64,7 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -63,7 +75,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

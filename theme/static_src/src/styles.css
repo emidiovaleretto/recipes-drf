@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    font-family: "Roboto Slab", serif;
+}
+
 .main-content {
     @apply max-w-[144rem] mx-auto bg-slate-800 p-12
 }

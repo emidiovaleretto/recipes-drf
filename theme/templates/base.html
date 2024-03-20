@@ -27,15 +27,15 @@
 </head>
 
 <body>
-	{% include 'includes/nav.html' %}
-	{% include 'includes/header.html' %}
-	{% include 'includes/search.html' %}
+	{% include 'partials/nav.html' %}
+	{% include 'partials/header.html' %}
+	{% include 'partials/search.html' %}
 
-	<main>
+	<main class="container mx-auto">
 		{% block content %}{% endblock %}
 	</main>
 
-	{% include 'includes/footer.html' %}
+	{% include 'partials/footer.html' %}
 
 	{% block postloadjs %}{% endblock %}
 </body>

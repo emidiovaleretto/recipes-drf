@@ -3,9 +3,24 @@
 @tailwind utilities;
 
 body {
+    font-family: sans-serif;
+    background-color: #e5e7eb;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: "Roboto Slab", serif;
 }
 
 .main-content {
     @apply max-w-[144rem] mx-auto bg-slate-800 p-12
+}
+
+.card {
+    @apply w-1/4 h-[600px] bg-white shadow-xl rounded-md overflow-hidden 
+           hover:scale-105 hover:transition hover:duration-300 hover:ease-in
 }

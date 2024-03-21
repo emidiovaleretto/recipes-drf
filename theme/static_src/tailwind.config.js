@@ -42,7 +42,11 @@ module.exports = {
         // '../../**/*.py'
     ],
     theme: {
-        extend: {},
+        extend: {
+            gridTemplateColumns: {
+                'app': 'repeat(auto-fit, minmax(34rem, 1fr))',
+            },
+        }
     },
     plugins: [
         /**

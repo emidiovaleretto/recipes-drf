@@ -24,3 +24,7 @@ h6 {
     @apply flex flex-col justify-between bg-white shadow-xl md:rounded-md overflow-hidden 
            lg:hover:scale-105 lg:hover:transition lg:hover:duration-300 lg:hover:ease-in
 }
+
+form:focus-within .fa-magnifying-glass {
+    @apply text-pink-700
+}

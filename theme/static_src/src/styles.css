@@ -26,5 +26,5 @@ h6 {
 }
 
 form:focus-within .fa-magnifying-glass {
-    @apply text-pink-700
+    @apply text-pink-700 transition-all ease-in-out delay-150
 }

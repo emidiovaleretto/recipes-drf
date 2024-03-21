@@ -1,5 +1,11 @@
 from django.shortcuts import render
+from .models import Recipe
 
 
 def index(request):
-    return render(request, 'recipes/index.html')
+    recipes = Recipe.objects.all()
+    context = {
+        'recipes': recipes
+    }
+
+    return render(request, 'recipes/index.html', context=context)

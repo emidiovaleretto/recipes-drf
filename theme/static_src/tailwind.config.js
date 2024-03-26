@@ -46,6 +46,15 @@ module.exports = {
             gridTemplateColumns: {
                 'app': 'repeat(auto-fit, minmax(34rem, 1fr))',
             },
+            colors: {
+                'primary-yellow': 'hsl(47, 88%, 63%)'
+            },
+            boxShadow: {
+                'solid-black': '6px 6px 000000'
+            },
+            grayscale: {
+                '50': '50%'
+            }
         }
     },
     plugins: [

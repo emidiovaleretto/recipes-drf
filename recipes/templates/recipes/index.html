@@ -7,52 +7,36 @@
 {% if recipes %}
     {% for recipe in recipes %}
     <div class="card">
-        <figure class="h-[242px]">
-            <img class="w-full h-full object-cover" src="{{ recipe.cover.url }}" alt="{{ recipe.title }}">
+        <figure>
+          <img class="illustration" src="{{ recipe.cover.url }}" alt="{{ recipe.title }}">
         </figure>
-        <div class="py-8 px-6">
-            <h2 class="text-gray-700">{{ recipe.title }}</h2>
-            <ul class="flex justify-between items-center">
-                <li class="text-[12px] italic py-4 text-gray-500">
-                    <i class="fa-solid fa-user"></i>
-                    {{ recipe.author.first_name }} {{ recipe.author.last_name }}
-                </li>
-                <li class="text-[12px] italic py-4 text-gray-500">
-                    <i class="fa-solid fa-calendar-days"></i>
-                    {{ recipe.created_at }}
-                </li>
-                <li class="text-[12px] italic py-4 text-gray-500">
-                    <i class="fa-solid fa-layer-group"></i>
-                    {{ recipe.category }}
-                </li>
+        <div class="flex items-center mb-2">
+            <figure>
+              <img class="avatar" src="https://media.licdn.com/dms/image/D4E03AQGfZLa2QKgO_Q/profile-displayphoto-shrink_800_800/0/1705699501597?e=1717027200&v=beta&t=1uYc6IPmViaeH1k1lsmW9oYxt0xkIQSH_cfydmDSzdc" alt="Author avatar">
+            </figure>
+            <h2 class="author">{{ recipe.author.first_name }} {{ recipe.author.last_name }}</h2>
+        </div>  
+        <p class="published-date">Published at {{ recipe.created_at|date:"d-m-Y" }}</p>
+        <div>
+            <h1 class="title">{{ recipe.title }}</h1>
+            <span class="badge">{{ recipe.category }}</span>    
+        </div>
+        <p class="description">{{ recipe.description }}</p>
+        <div class="recipe__preparation-time">
+            <span>Preparation time</span>
+            <ul>
+              <li><span>Total: </span>Approximately {{ recipe.preparation_time }} {{ recipe.preparation_time_unit }}</li>
+              <li><span>Preparation: </span>{{ recipe.preparation_time }} {{ recipe.preparation_time_unit }}</li>
+              <li><span>Cooking: </span>{{ recipe.preparation_time }} {{ recipe.preparation_time_unit }}</li>
             </ul>
-            <p class="text-sm text-gray-600">{{ recipe.description }}</p>
+            <span>Servings</span>
+            <ul>
+                <li><span>Servings: </span>{{ recipe.servings }} {{ recipe.servings_unit }}</li>
+            </ul>
         </div>
-        <div class="flex justify-evenly text-center mt-2 mb-6">
-            <div>
-                <div>
-                    <i class="fa-solid fa-stopwatch"></i>
-                    <span>Preparation</span>
-                </div>
-                <div>
-                    <span>{{ recipe.preparation_time }} {{ recipe.preparation_time_unit }}</span>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <i class="fa-solid fa-pizza-slice"></i>
-                    <span>Servings</span>
-                </div>
-                <div>
-                    <span>{{ recipe.servings }} {{ recipe.servings_unit }}</span>
-                </div>
-            </div>
-        </div>
-        <div class="bg-pink-400">
-            <a class="flex justify-center bg-slate-900 text-white py-4" href="">See more...</a>
-        </div>
-    </div>    
-    {% endfor %} 
+        <a class="flex justify-center rounded-md bg-slate-900 font-semibold text-white py-4" href="">See details</a>
+    </div>
+    {% endfor %}
 {% endif %}
 </div>
 

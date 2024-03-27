@@ -50,11 +50,15 @@ module.exports = {
                 'primary-yellow': 'hsl(47, 88%, 63%)'
             },
             boxShadow: {
-                'solid-black': '6px 6px 000000'
+                'solid-black': '6px 6px 1px 000000',
+                'inner': '1px 1px 000000'
             },
             grayscale: {
                 '50': '50%'
-            }
+            },
+            scale: {
+                '99': '.99'
+            },
         }
     },
     plugins: [

@@ -1,6 +1,7 @@
 <div class="card">
-    <figure>
+    <figure class="relative">
       <img class="illustration" src="{{ recipe.cover.url }}" alt="{{ recipe.title }}">
+      <figcaption class="badge">{{ recipe.category }}</figcaption>
     </figure>
     <div class="flex items-center mb-2">
         <figure>
@@ -11,7 +12,6 @@
     <p class="published-date">Published at {{ recipe.created_at|date:"d-m-Y" }}</p>
     <div>
         <h1 class="title">{{ recipe.title }}</h1>
-        <span class="badge">{{ recipe.category }}</span>    
     </div>
     <p class="description">{{ recipe.description }}</p>
     <div class="recipe__preparation-time">

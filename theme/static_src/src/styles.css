@@ -45,11 +45,11 @@ h6 {
 }
 
 .title {
-    @apply inline-block font-serif font-bold text-2xl mr-1 mb-3;
+    @apply inline-block font-serif font-bold text-2xl mr-1 mb-1;
 }
 
 .badge {
-    @apply inline-block w-fit font-serif text-sm font-semibold py-1 px-3 mb-3 bg-primary-yellow rounded-md;
+    @apply inline-block absolute top-2 left-2 w-fit font-serif text-sm font-semibold py-1 px-3 mb-3 bg-primary-yellow rounded-md;
 }
 
 .description {

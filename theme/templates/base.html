@@ -27,16 +27,18 @@
 </head>
 
 <body>
-	{% include 'partials/nav.html' %}
-	{% include 'partials/header.html' %}
-
-	<main class="container mx-auto">
-		{% block content %}{% endblock %}
-	</main>
-
-	{% include 'partials/footer.html' %}
-
-	{% block postloadjs %}{% endblock %}
+	<div class="grid h-screen content-between">
+		{% include 'partials/nav.html' %}
+		{% include 'partials/header.html' %}
+	
+		<main class="container mx-auto">
+			{% block content %}{% endblock %}
+		</main>
+	
+		{% include 'partials/footer.html' %}
+	
+		{% block postloadjs %}{% endblock %}
+	</div>
 </body>
 
 </html>

@@ -9,3 +9,12 @@ def index(request):
     }
 
     return render(request, 'recipes/index.html', context=context)
+
+
+def recipe_detail(request, slug):
+    recipe = Recipe.objects.get(slug=slug)
+    context = {
+        'recipe': recipe
+    }
+
+    return render(request, 'recipes/recipe-details.html', context=context)

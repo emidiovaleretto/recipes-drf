@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 
 class Category(models.Model):
     category_name = models.CharField(max_length=50)
+    category_slug = models.SlugField(unique=True)
 
     def __str__(self):
         return self.category_name

@@ -3,7 +3,7 @@ from .models import Recipe
 
 
 def index(request):
-    recipes = Recipe.objects.all()
+    recipes = Recipe.objects.filter(is_published=True).order_by('-created_at')
     context = {
         'recipes': recipes
     }
@@ -12,7 +12,8 @@ def index(request):
 
 
 def category(request, slug):
-    recipes = Recipe.objects.filter(category__category_slug=slug)
+    recipes = Recipe.objects.filter(category__category_slug=slug).filter(
+        is_published=True).order_by('-created_at')
     context = {
         'recipes': recipes
     }
@@ -22,8 +23,12 @@ def category(request, slug):
 
 def recipe_detail(request, slug):
     recipe = get_object_or_404(Recipe, slug=slug)
+    ingredients = recipe.ingredients.split('\n')
+    steps = recipe.preparation_steps.split('\n')
     context = {
-        'recipe': recipe
+        'recipe': recipe,
+        'ingredients': ingredients,
+        'steps': steps
     }
 
     return render(request, 'recipes/recipe-details.html', context=context)

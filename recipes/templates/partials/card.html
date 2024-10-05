@@ -26,5 +26,5 @@
             <li><span>Servings: </span>{{ recipe.servings }} {{ recipe.servings_unit }}</li>
         </ul>
     </div>
-    <a class="button" href="{% url 'recipe_detail' recipe.slug %}">See details</a>
+    <a class="button" href="{% url 'recipes:detail' recipe.slug %}">See details</a>
 </div>

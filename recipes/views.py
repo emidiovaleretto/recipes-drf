@@ -11,8 +11,17 @@ def index(request):
     return render(request, 'recipes/index.html', context=context)
 
 
+def category(request, slug):
+    recipes = Recipe.objects.filter(category__category_slug=slug)
+    context = {
+        'recipes': recipes
+    }
+
+    return render(request, 'recipes/index.html', context=context)
+
+
 def recipe_detail(request, slug):
-    recipe = Recipe.objects.get(slug=slug)
+    recipe = Recipe.objects.filter(slug=slug)
     context = {
         'recipe': recipe
     }

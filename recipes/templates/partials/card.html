@@ -1,7 +1,9 @@
 <div class="card">
     <figure class="relative">
       <img class="illustration" src="{{ recipe.cover.url }}" alt="{{ recipe.title }}">
-      <figcaption class="badge">{{ recipe.category }}</figcaption>
+      <a href="{% url 'recipes:category' recipe.category.category_slug %}">
+        <figcaption class="badge">{{ recipe.category }}</figcaption>
+      </a>
     </figure>
     <div class="flex items-center mb-2">
         <figure>
